@@ -13,7 +13,7 @@ class MonadOps[A, M[_]](a:M[A])(implicit monad:Monad[M]) {
 }
 
 class MonadOpsPure[A](a:A) {
-  def pure[M[_]](implicit monad:Monad[M]) = monad.pure(a)
+  def pure[M[_]](implicit monad:Monad[M]): M[A] = monad.pure(a)
 }
 
 object MonadOps {
